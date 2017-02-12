@@ -204,9 +204,9 @@ open class Bar: View {
                 b.titleEdgeInsets = .zero
             }
             
-            v.width = v.intrinsicContentSize.width
+            v.bounds.size.width = v.intrinsicContentSize.width
             v.sizeToFit()
-            v.grid.columns = Int(ceil(v.width / gridFactor)) + 2
+            v.grid.columns = Int(ceil(v.bounds.width / gridFactor)) + 2
             
             lc += v.grid.columns
             
@@ -221,9 +221,9 @@ open class Bar: View {
                 b.titleEdgeInsets = .zero
             }
             
-            v.width = v.intrinsicContentSize.width
+            v.bounds.size.width = v.intrinsicContentSize.width
             v.sizeToFit()
-            v.grid.columns = Int(ceil(v.width / gridFactor)) + 2
+            v.grid.columns = Int(ceil(v.bounds.width / gridFactor)) + 2
             
             rc += v.grid.columns
             

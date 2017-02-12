@@ -309,19 +309,20 @@ extension CALayer {
             return
         }
         
-        if 0 == frame.width {
-            frame.size.width = frame.height
+        if 0 == bounds.width {
+             bounds.size.width =  bounds.height
         }
             
-        if 0 == frame.height {
-            frame.size.height = frame.width
+        if 0 ==  bounds.height {
+             bounds.size.height =  bounds.width
         }
         
         guard .circle == shapePreset else {
             return
         }
         
-        cornerRadius = bounds.size.width / 2
+        bounds.size.width = bounds.height
+        cornerRadius = bounds.width / 2
     }
     
     /// Sets the shadow path.

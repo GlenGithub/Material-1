@@ -227,10 +227,10 @@ public struct Grid {
                 let co = v.grid.offset.columns
                 let w = (canvas.bounds.width - contentEdgeInsets.left - contentEdgeInsets.right - layoutEdgeInsets.left - layoutEdgeInsets.right + interimSpace) / CGFloat(axis.columns)
                 
+                v.bounds.size.width = w * CGFloat(c) - interimSpace
+                v.bounds.size.height = canvas.bounds.height - contentEdgeInsets.top - contentEdgeInsets.bottom - layoutEdgeInsets.top - layoutEdgeInsets.bottom
                 v.x = CGFloat(i + n + co) * w + contentEdgeInsets.left + layoutEdgeInsets.left
                 v.y = contentEdgeInsets.top + layoutEdgeInsets.top
-                v.width = w * CGFloat(c) - interimSpace
-                v.height = canvas.bounds.height - contentEdgeInsets.top - contentEdgeInsets.bottom - layoutEdgeInsets.top - layoutEdgeInsets.bottom
                 
                 n += c + co - 1
                 
@@ -239,10 +239,10 @@ public struct Grid {
                 let ro = v.grid.offset.rows
                 let h = (canvas.bounds.height - contentEdgeInsets.top - contentEdgeInsets.bottom - layoutEdgeInsets.top - layoutEdgeInsets.bottom + interimSpace) / CGFloat(axis.rows)
                 
+                v.bounds.size.width = canvas.bounds.width - contentEdgeInsets.left - contentEdgeInsets.right - layoutEdgeInsets.left - layoutEdgeInsets.right
+                v.bounds.size.height = h * CGFloat(r) - interimSpace
                 v.x = contentEdgeInsets.left + layoutEdgeInsets.left
                 v.y = CGFloat(i + n + ro) * h + contentEdgeInsets.top + layoutEdgeInsets.top
-                v.width = canvas.bounds.width - contentEdgeInsets.left - contentEdgeInsets.right - layoutEdgeInsets.left - layoutEdgeInsets.right
-                v.height = h * CGFloat(r) - interimSpace
                 
                 n += r + ro - 1
                 
@@ -254,10 +254,10 @@ public struct Grid {
                 let w = (canvas.bounds.width - contentEdgeInsets.left - contentEdgeInsets.right - layoutEdgeInsets.left - layoutEdgeInsets.right + interimSpace) / CGFloat(axis.columns)
                 let h = (canvas.bounds.height - contentEdgeInsets.top - contentEdgeInsets.bottom - layoutEdgeInsets.top - layoutEdgeInsets.bottom + interimSpace) / CGFloat(axis.rows)
                 
+                v.bounds.size.width = w * CGFloat(c) - interimSpace
+                v.bounds.size.height = h * CGFloat(r) - interimSpace
                 v.x = CGFloat(co) * w + contentEdgeInsets.left + layoutEdgeInsets.left
                 v.y = CGFloat(ro) * h + contentEdgeInsets.top + layoutEdgeInsets.top
-                v.width = w * CGFloat(c) - interimSpace
-                v.height = h * CGFloat(r) - interimSpace
             }
             
             i += 1
